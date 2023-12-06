@@ -1,9 +1,11 @@
 //exportamos una clase productManager que se encargue de gestionar los productos
 //¿Paradigma secuencial que es? es un paradigma de programacion que se basa en la ejecucion de instrucciones de forma secuencial, es decir, una tras otra.
-export class ProductManager {
+import { LocalStorage } from "./localStorage.js";
+export class ProductManager extends LocalStorage {
     #products;
 
     constructor() {
+        super();
         this.#products = []; //array de productos para almacenar productos.
     }
 
