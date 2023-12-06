@@ -1,9 +1,9 @@
 import { Product } from "./product.js";
 import { ProductManager } from "./productManager.js";
 import { nieve } from "./copos.js";
-
-const productManager = new ProductManager();
 nieve();
+const productManager = new ProductManager();
+
 // Evento del formulario para agregar un nuevo producto.
 
 document.getElementById('product-form-events').addEventListener('submit', function (event) { //cuando se envie el formulario
@@ -26,3 +26,30 @@ document.getElementById('product-form-events').addEventListener('submit', functi
     //Actualizamos la tabla de inventario
     updateInventoryTable();
 });
+// Función para actualizar la tabla de inventario
+function updateInventoryTable() {
+    const tableBody = document.getElementById('body-table');
+    tableBody.innerHTML = '';
+
+    // Obtener la lista de productos del administrador
+    const products = productManager.listProducts();
+
+    // Iterar sobre la lista de productos y agregar filas a la tabla
+    products.forEach(product => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${product.nombre}</td>
+            <td>${product.cantidad}</td>
+            <td>${product.precio}</td>
+            <td>
+                <button id="edit-button">Editar</button>
+                <button id="delete-button">Eliminar</button>
+            </td>
+        `;
+        tableBody.appendChild(row);
+    });
+
+}
+
+// Llamar a la función inicial para mostrar la tabla del inventario
+updateInventoryTable();
