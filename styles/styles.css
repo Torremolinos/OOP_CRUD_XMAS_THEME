@@ -15,7 +15,7 @@ body {
   background-position: center;
   background-attachment: fixed;
   font-family: "Christmas";
-  overflow: hidden;
+
 }
 
 .enunciado {
@@ -160,7 +160,7 @@ i {
     top: -10px;
   }
   100% {
-    top: calc(100vh + 50px);
+    top: calc(90vh + 40px);
   }
 }
 
