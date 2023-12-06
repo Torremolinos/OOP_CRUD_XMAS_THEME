@@ -1,0 +1,196 @@
+@font-face {
+    font-family: 'Christmas';
+    src: url('/assets/fonts/MountainsofChristmas-Bold.ttf') format('truetype');
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Christmas';
+}
+body{
+    background-image: url('../assets/imgs/033869-150ppp.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: 'Christmas';
+    overflow: hidden;
+}
+
+
+h1 {
+    text-align: center;
+    font-family: 'Christmas';
+    color: rgb(0, 0, 0);
+    z-index: 50;
+}
+
+.inventory-table-styles {
+    border-collapse: collapse;
+    width: 80%;
+    margin: 20px auto;
+    color: rgb(0, 0, 0);
+}
+
+.inventory-table-styles th,
+.inventory-table-styles td {
+    border: 1px solid #cccccc;
+    padding: 8px;
+    text-align: center;
+}
+
+.inventory-table-styles th {
+    background-color: #f7cbcb;
+    color: rgba(255, 0, 0, 0.687);
+}
+
+.inventory-table-styles tr:hover {
+    background-color: rgb(235, 217, 217);
+    color: white;
+}
+
+/* Estilos para el formulario con fondo negro */
+.product-form-styles {
+    background-color: rgba(246, 48, 48, 0.65);
+    color: white;
+    padding: 20px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    margin: 20px;
+    box-shadow: 0 2px 4px rgb(255, 254, 254);
+}
+
+/* Estilos para las etiquetas y campos de entrada */
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+input {
+    width: 97%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #efeded;
+    /* Borde con un tono más claro que el fondo */
+    border-radius: 3px;
+    color: rgb(255, 0, 0);
+    /* Texto en color blanco para mayor contraste */
+    background-color: rgb(230, 159, 159);
+    /* Fondo negro para los campos de entrada */
+    outline: none;
+}
+
+/* Estilos para el botón */
+button {
+    margin: 2%;
+    background-color: #eb5552;
+    /* Color de fondo azul */
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Christmas';
+}
+
+button:hover {
+    background-color: #6a0808;
+    /* Color de fondo azul más oscuro al pasar el cursor */
+}
+
+i{
+    position:absolute;
+    background:#fff;
+    border-radius: 50%;
+    box-shadow: inset 0 -1px 1px rgb(114, 114, 114);
+    top: -10px;
+    animation: nieve linear infinite;
+}
+@keyframes nieve {
+    0% {
+        top: -10px;
+    }
+    100%{
+        top: calc(100vh + 50px);
+    }
+}
+
+.luces{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+}
+.luces2{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+@-webkit-keyframes lightswitch-f {
+    0% {opacity: 100;}
+    25% {opacity: 0;}
+    50% {opacity:100;}
+    75% {opacity: 0;}
+    100% {opacity: 100;}
+} 
+		  
+@keyframes lightswitch-f {
+    0% {opacity: 100;}
+    25% {opacity: 0;}
+    50% {opacity:100;}
+    75% {opacity: 0;}
+    100% {opacity: 100;}	
+} 
+
+@-webkit-keyframes lightswitch-s {
+    0% {opacity: 0;}
+    25% {opacity: 100;}
+    50% {opacity: 0;}
+    75% {opacity: 100;}
+    100% {opacity: 0;}
+} 
+		  
+@keyframes lightswitch-s {
+    0% {opacity: 0;}
+    25% {opacity: 100;}
+    50% {opacity: 0;}
+    75% {opacity: 100;}
+    100% {opacity: 0;}
+} 
+
+.lights-1 {
+	display: block;
+	box-shadow: -3.5em 3.5em 0 0em #f1c40f, 3.5em 2.5em 0 0em #f1c40f, -0.5em -9em 0 0 #f1c40f, 2em -4em 0 0 #f1c40f, -1em -5em 0 0 #f1c40f, 1em -8em 0 0 #f1c40f, -4em -1em 0 0 #f1c40f, 0em 5em 0 0 #f1c40f, 6em 5em 0 0 #f1c40f, 4em -1em 0 0 #f1c40f;
+	background: #f1c40f;
+	width: 0.5em;
+	height: 0.5em;
+	overflow: hidden;
+	border-radius: 1em;
+	margin-top: 5em;
+	margin-left: 2.5em;
+	position: absolute;
+	z-index: 100;
+	animation: lightswitch-f 5s infinite;
+	-webkit-animation: lightswitch-f 5s infinite;
+}
+
+.lights-2 {
+	display: block;
+	box-shadow: -3.5em 3.5em 0 0em #f1c40f, 3.5em 2.5em 0 0em #f1c40f, -0.5em -9em 0 0 #f1c40f, 2em -4em 0 0 #f1c40f, -1em -5em 0 0 #f1c40f, 1em -8em 0 0 #f1c40f, -4em -1em 0 0 #f1c40f, 0em 5em 0 0 #f1c40f, 6em 5em 0 0 #f1c40f, 4em -1em 0 0 #f1c40f;
+	background: #f1c40f;
+	width: 0.5em;
+	height: 0.5em;
+	overflow: hidden;
+	border-radius: 1em;
+	margin-top: 4.8em;
+	margin-left: 2.9em;
+	position: absolute;
+	z-index: 100;
+	transform: rotate(224deg);
+	animation: lightswitch-s 5s infinite;
+	-webkit-animation: lightswitch-s 5s infinite;
+}
