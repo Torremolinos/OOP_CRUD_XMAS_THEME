@@ -53,3 +53,4 @@ function updateInventoryTable() {
 
 // Llamar a la función inicial para mostrar la tabla del inventario
 updateInventoryTable();
+
