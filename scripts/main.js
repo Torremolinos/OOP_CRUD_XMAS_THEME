@@ -23,71 +23,74 @@ const listProducts = [
 listProducts.forEach((product) => productManager.addProduct(product));
 updateInventoryTable();
 
-// Event listener for the form to add a new product
+
 document.getElementById("product-form-events").addEventListener("submit", function (event) {
-    event.preventDefault();
+  event.preventDefault();
 
-    const productName = document.getElementById("product-name").value;
-    const productQuantity = parseInt(document.getElementById("product-quantity").value);
-    const productPrice = parseFloat(document.getElementById("product-price").value);
+  const productName = document.getElementById("product-name").value;
+  const productQuantity = parseInt(document.getElementById("product-quantity").value);
+  const productPrice = parseFloat(document.getElementById("product-price").value);
 
-    if (!productName || isNaN(productQuantity) || isNaN(productPrice)) {
-        alert("Please enter valid data.");
-        return;
-    }
+  if (!productName || isNaN(productQuantity) || isNaN(productPrice)) {
+    alert("Please enter valid data.");
+    return;
+  }
 
-    const newProduct = new Product(
-        Date.now(),
-        productName,
-        productQuantity,
-        productPrice
-    );
+  const newProduct = new Product(
+    Date.now(),
+    productName,
+    productQuantity,
+    productPrice
+  );
 
-    productManager.addProduct(newProduct);
-    this.reset();
-    updateInventoryTable();
+  productManager.addProduct(newProduct);
+  this.reset();
+  updateInventoryTable();
 });
 
-// Function to update the inventory table
+
 function updateInventoryTable() {
-    const tableBody = document.getElementById("body-table");
-    tableBody.innerHTML = "";
+  const tableBody = document.getElementById("body-table");
+  tableBody.innerHTML = "";
 
-    const products = productManager.listProducts();
+  const products = productManager.listProducts();
 
-    products.forEach((product) => {
-        const row = document.createElement("tr");
-        row.innerHTML = `
-            <td>${product.nombre}</td>
-            <td>${product.cantidad}</td>
-            <td>${product.precio}</td>
-            <td>
-                <button class="edit-button" data-id="${product.id}">Editar</button>
-                <button class="delete-button" data-id="${product.id}">Eliminar</button>
-            </td>
-        `;
-        tableBody.appendChild(row);
-    });
+  products.forEach((product) => {
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td>${product.nombre}</td>
+      <td>${product.cantidad}</td>
+      <td>${product.precio}</td>
+      <td>
+        <button class="edit-button" data-id="${product.id}">Editar</button>
+        <button class="delete-button" data-id="${product.id}">Eliminar</button>
+      </td>
+    `;
+    tableBody.appendChild(row);
+  });
 }
 
-// Event delegation for button clicks (edit and delete)
-document.getElementById("body-table").addEventListener("click", function (event) {
-    const target = event.target;
 
-    if (target.classList.contains("edit-button")) {
-        // Handle edit button click
-        const productId = parseInt(target.dataset.id);
-        const editedProduct = prompt("Enter updated product information (name, quantity, price):");
-        if (editedProduct) {
-            const [name, quantity, price] = editedProduct.split(',').map(value => value.trim());
-            const updatedProduct = new Product(productId, name, parseInt(quantity), parseFloat(price));
-            productManager.updateProductById(productId, updatedProduct);
-            updateInventoryTable();
-        }
-    } else if (target.classList.contains("delete-button")) {
-        // Handle delete button click
-        const productId = parseInt(target.dataset.id);
-        productManager.deleteProductById(productId);
-        updateInventoryTable();
+document.getElementById("body-table").addEventListener("click", function (event) {
+  const target = event.target;
+
+  if (target.classList.contains("edit-button")) {
+    const productId = parseInt(target.dataset.id);
+    const editedProduct = prompt("Enter updated product information (name, quantity, price):");
+    if (editedProduct) {
+      const [name, quantity, price] = editedProduct.split(',').map(value => value.trim());
+      const updatedProduct = new Product(productId, name, parseInt(quantity), parseFloat(price));
+      productManager.updateProductById(productId, updatedProduct);
+      updateInventoryTable();
     }
+  } else if (target.classList.contains("delete-button")) {
+    const productId = parseInt(target.dataset.id);
+    productManager.deleteProductById(productId);
+    updateInventoryTable();
+  }
 });
+
+// // Introduce valores vacíos en el localStorage
+// if (!localStorage.getItem("productData")) {
+//   localStorage.setItem("productData", JSON.stringify([]));
+// }

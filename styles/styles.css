@@ -24,19 +24,20 @@ body {
   flex-direction: column;
   align-items: center;
   font-family: "Christmas";
-  color: wheat;
+  color: brown;
   z-index: 50;
   text-shadow: 2px 2px 4px rgba(13, 3, 3, 0.5);
+  font-weight:900;
 }
 
 h1 {
   width: 12%;
   text-align: center;
   font-family: "Christmas";
-  color: wheat;
+  color:brown;
   z-index: 50;
   text-shadow: 2px 2px 4px rgba(13, 3, 3, 0.5);
-  background-color: rgba(255, 0, 0, 0.407);
+  background-color:  wheat;
   border-radius: 10px;
 }
 
@@ -44,44 +45,45 @@ h1 {
   border-collapse: collapse;
   width: 80%;
   margin: 20px auto;
-  color: wheat;
+  color: brown;
   z-index: 50;
   text-shadow: 2px 2px 4px rgba(13, 3, 3, 0.5);
-  background-color: rgba(255, 0, 0, 0.407);
+  background-color: wheat;
 }
 
 .inventory-table-styles th,
 .inventory-table-styles td {
-  border: 1px solid wheat;
+  border: 1px solid rgba(245, 222, 179, 0.701);
   padding: 8px;
   text-align: center;
   text-shadow: 2px 2px 4px rgba(13, 3, 3, 0.5);
-  background-color: rgba(255, 0, 0, 0.407);
+  background-color: wheat;
+  
 }
 
 .inventory-table-styles th {
-  background-color: #fba2a2;
-  color: wheat;
+  background-color:  rgb(165, 120, 42);
+  color: brown;
   text-shadow: 2px 2px 4px rgba(13, 3, 3, 0.5);
-  background-color: rgba(255, 0, 0, 0.407);
+  background-color:  rgba(26, 134, 14, 0.125);
   opacity: 0.8;
 }
 
 .inventory-table-styles tr:hover {
-  background-color: rgb(127, 22, 22);
-  color: wheat;
+  background-color:  rgb(165, 120, 42);
+  color: brown;
   text-shadow: 2px 2px 4px rgba(248, 96, 96, 0.5);
 }
 
 /* Estilos para el formulario con fondo negro */
 .product-form-styles {
-  background-color: rgba(246, 48, 48, 0.65);
-  color: wheat;
+  background-color: brown;
+  color: brown;
   padding: 20px;
-  border: 1px solid #333;
+  border: 1px solid gold;
   border-radius: 5px;
   margin: 20px;
-  box-shadow: 0 2px 4px rgb(255, 254, 254);
+  box-shadow: 0 2px 4px gold;
 }
 
 /* Estilos para las etiquetas y campos de entrada */
@@ -91,10 +93,11 @@ label {
   margin-bottom: 10px;
   font-weight: bold;
   text-shadow: 2px 2px 4px rgba(13, 3, 3, 0.5);
-  background-color: rgba(255, 0, 0, 0.407);
+  background-color: wheat;
+  color: brown;
 }
 ::placeholder {
-  color: wheat;
+  color: brown;
 }
 .divi {
   display: flex;
@@ -114,16 +117,16 @@ input {
   width: 97%;
   padding: 10px;
   margin-bottom: 15px;
-  border: 1px solid wheat;
+  border: 1px solid brown;
   /* Borde con un tono más claro que el fondo */
   border-radius: 3px;
-  color: wheat;
+  color: brown;
   /* Texto en color blanco para mayor contraste */
   background-color: rgb(230, 159, 159);
   /* Fondo negro para los campos de entrada */
   outline: none;
   text-shadow: 2px 2px 4px rgba(13, 3, 3, 0.5);
-  background-color: rgba(255, 0, 0, 0.407);
+  background-color: wheat;
 }
 
 /* Estilos para el botón */
@@ -132,18 +135,18 @@ button {
   margin: 2%;
   background-color: #eb5552;
   /* Color de fondo azul */
-  color: wheat;
+  color: brown;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-family: "Christmas";
   text-shadow: 2px 2px 4px rgba(13, 3, 3, 0.5);
-  background-color: rgb(249, 121, 121);
+  background-color: rgb(245, 222, 179);
 }
 
 button:hover {
-  background-color: #6a0808;
+  background-color: #fbd308;
   /* Color de fondo azul más oscuro al pasar el cursor */
 }
 

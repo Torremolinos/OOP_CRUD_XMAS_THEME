@@ -12,6 +12,15 @@ export class Product{
         this.#precio = precio;
     }
     
+    toJSON() {  //transformar los objetos a JsonObject
+        return {
+            id: this.#id,
+            nombre: this.#nombre,
+            cantidad: this.#cantidad,
+            precio: this.#precio
+        };
+    }
+
     get id(){
         return this.#id;
     }
