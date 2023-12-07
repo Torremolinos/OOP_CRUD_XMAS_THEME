@@ -133,6 +133,11 @@ searchButton.addEventListener("click", function () {
         row.style.display = "";
     });
 });
+const subir = document.getElementById("elevator");
+subir.addEventListener("click", function () {
+  document.body.scrollTop = 0; // Para navegadores antiguos
+  document.documentElement.scrollTop = 0; // Para navegadores modernos
+});
 
 // // Introduce valores vacíos en el localStorage
 // if (!localStorage.getItem("productData")) {
