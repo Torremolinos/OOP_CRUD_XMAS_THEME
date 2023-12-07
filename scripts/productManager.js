@@ -17,6 +17,7 @@ export class ProductManager extends LocalStorage {
         return this.#products;
     }
  
+    
     // Método para agregar un producto
     addProduct(product) {
         const existingProduct = this.#products.find(p => p.id === product.id);
@@ -28,7 +29,18 @@ export class ProductManager extends LocalStorage {
         // Guardar la lista actualizada en el localStorage
         this.saveProducts();
     }
- 
+    // Método para buscar un producto en la tabla
+    searchProductInTable(productName) {
+        const tableRows = document.querySelectorAll('table tbody tr');
+        for (const row of tableRows) {
+            const nameCell = row.querySelector('.product-name');
+            if (nameCell.textContent.toLowerCase().includes(productName.toLowerCase())) {
+                row.classList.add('highlighted');
+            } else {
+                row.classList.remove('highlighted');
+            }
+        }
+    }
     // Método para actualizar un producto por su ID
     updateProductById(id, updatedProduct) {
         const index = this.#products.findIndex(product => product.id === id);
@@ -56,6 +68,7 @@ export class ProductManager extends LocalStorage {
         LocalStorage.setData(this.#productsKey, this.#products);
     }
 }
+
     //Metodo para mostrar todos los productos dentro del Array.
 //     showProductBy() {
 //         //buscamos el producto por su id
