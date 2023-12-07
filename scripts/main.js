@@ -4,24 +4,40 @@ import { Product } from "./product.js";
 import { ProductManager } from "./productManager.js";
 
 const productManager = new ProductManager();
-const listProducts = [
-  new Product(1, "Trenes", 50, 10.5),
-  new Product(2, "Oso Peluche", 50, 5.9),
-  new Product(3, "PlayMobil", 50, 7.5),
-  new Product(4, "Action-Man", 50, 7.29),
-  new Product(5, "Plastilina", 50, 2.99),
-  new Product(6, "Pelota Baloncesto", 50, 9.99),
-  new Product(7, "Pelota Futbol", 50, 8),
-  new Product(8, "Raqueta de Tennis", 50, 20),
-  new Product(9, "Juegos de Mesa", 50, 15.5),
-  new Product(10, "Martillo de Thor Juguete", 50, 7.55),
-  new Product(11, "Iron Man", 50, 9.55),
-  new Product(12, "Hulk", 50, 10.55),
-  new Product(13, "Marioneta", 50, 7.55),
-  new Product(14, "ullaHop", 50, 6.55),
-];
-listProducts.forEach((product) => productManager.addProduct(product));
-updateInventoryTable();
+// Verificar si hay datos en el localStorage
+if (!localStorage.getItem("productData")) {
+  const list = [
+    new Product(1, "Trenes", 50, 10.5),
+    new Product(2, "Oso Peluche", 50, 5.9),
+    new Product(3, "PlayMobil", 50, 7.5),
+    new Product(4, "Action-Man", 50, 7.29),
+    new Product(5, "Plastilina", 50, 2.99),
+    new Product(6, "Pelota Baloncesto", 50, 9.99),
+    new Product(7, "Pelota Futbol", 50, 8),
+    new Product(8, "Raqueta de Tennis", 50, 20),
+    new Product(9, "Juegos de Mesa", 50, 15.5),
+    new Product(10, "Martillo de Thor Juguete", 50, 7.55),
+    new Product(11, "Iron Man", 50, 9.55),
+    new Product(12, "Hulk", 50, 10.55),
+    new Product(13, "Marioneta", 50, 7.55),
+    new Product(14, "ullaHop", 50, 6.55),
+  ];
+  list.forEach((product) => productManager.addProduct(product)); // añadimos los productos al productManager
+  updateInventoryTable(); // actualizamos la tabla de productos
+} else {
+  // Obtener los datos del localStorage y agregarlos al productManager
+  const storedData = JSON.parse(localStorage.getItem("productData"));
+  storedData.forEach((productData) => {
+    const product = new Product(
+      productData.id,
+      productData.nombre,
+      productData.cantidad,
+      productData.precio
+    );
+    productManager.addProduct(product);
+  });
+  updateInventoryTable(); // actualizamos la tabla de productos
+}
 
 
 document.getElementById("product-form-events").addEventListener("submit", function (event) {

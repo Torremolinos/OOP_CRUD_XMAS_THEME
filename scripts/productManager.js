@@ -19,6 +19,11 @@ export class ProductManager extends LocalStorage {
  
     // Método para agregar un producto
     addProduct(product) {
+        const existingProduct = this.#products.find(p => p.id === product.id);
+        if (existingProduct) {
+            console.log('El producto con el mismo ID ya existe.');
+            return;
+        }
         this.#products.push(product);
         // Guardar la lista actualizada en el localStorage
         this.saveProducts();

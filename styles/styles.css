@@ -63,9 +63,9 @@ h1 {
 
 .inventory-table-styles th {
   background-color:  rgb(165, 120, 42);
-  color: brown;
+  color: rgb(241, 222, 16);
   text-shadow: 2px 2px 4px rgba(13, 3, 3, 0.5);
-  background-color:  rgba(26, 134, 14, 0.125);
+  background-color:  rgb(189, 75, 54);
   opacity: 0.8;
 }
 
