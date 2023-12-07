@@ -48,7 +48,7 @@ document.getElementById("product-form-events").addEventListener("submit", functi
   const productPrice = parseFloat(document.getElementById("product-price").value);
 
   if (!productName || isNaN(productQuantity) || isNaN(productPrice)) {
-    alert("Please enter valid data.");
+    alert("Porfavor introduce los datos adecuados.");
     return;
   }
 
@@ -92,7 +92,7 @@ document.getElementById("body-table").addEventListener("click", function (event)
 
   if (target.classList.contains("edit-button")) {
     const productId = parseInt(target.dataset.id);
-    const editedProduct = prompt("Enter updated product information (name, quantity, price):");
+    const editedProduct = prompt("Introduce los datos correctos en este orden (NOMBRE, CANTIDAD, PRECIO):");
     if (editedProduct) {
       const [name, quantity, price] = editedProduct.split(',').map(value => value.trim());
       const updatedProduct = new Product(productId, name, parseInt(quantity), parseFloat(price));
