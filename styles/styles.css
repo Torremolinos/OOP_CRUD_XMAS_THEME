@@ -149,11 +149,9 @@ input {
   border-radius: 3px;
   color: brown;
   /* Texto en color blanco para mayor contraste */
-  background-color: rgb(230, 159, 159);
-  /* Fondo negro para los campos de entrada */
   outline: none;
   text-shadow: 2px 2px 4px rgba(13, 3, 3, 0.5);
-  background-color: wheat;
+  background-color: rgb(250, 205, 116);
   box-shadow: 0 2px 4px gold;
   text-align: center;
 }

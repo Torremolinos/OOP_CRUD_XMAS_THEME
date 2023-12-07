@@ -2,11 +2,11 @@ import { nieve } from "./copos.js";
 nieve();
 import { Product } from "./product.js";
 import { ProductManager } from "./productManager.js";
-
+let list;
 const productManager = new ProductManager();
 // Verificar si hay datos en el localStorage
 if (!localStorage.getItem("productData")) {
-  const list = [
+   list = [
     new Product(1, "Trenes", 50, 10.5),
     new Product(2, "Oso Peluche", 50, 5.9),
     new Product(3, "PlayMobil", 50, 7.5),
@@ -139,6 +139,29 @@ subir.addEventListener("click", function () {
   document.documentElement.scrollTop = 0; // Para navegadores modernos
 });
 
+const precioTotal = () => {
+  let precioTotal = 0;
+  let precioUnitario = 0;
+  list.forEach((producto) => {
+    precioUnitario += producto.cantidad * producto.precio;
+    precioTotal = precioUnitario;
+  });
+
+  return precioTotal;
+};
+const cantidadTotal = () => {
+  let cantidadTotal = 0;
+  list.forEach((producto) => {
+    cantidadTotal += producto.cantidad;
+  });
+
+  return cantidadTotal;
+};
+
+const preTotal = document.getElementById("total-precio");
+preTotal.innerHTML = precioTotal();
+const producto_total = document.getElementById("total-products");
+producto_total.innerHTML = cantidadTotal();
 // // Introduce valores vacíos en el localStorage
 // if (!localStorage.getItem("productData")) {
 //   localStorage.setItem("productData", JSON.stringify([]));

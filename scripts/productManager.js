@@ -83,5 +83,4 @@ export class ProductManager extends LocalStorage {
 //     set products(value) { //setter para establecer el array de productos
 //         this.#products = value; //establece el array de productos
 //     }
-
 // }
