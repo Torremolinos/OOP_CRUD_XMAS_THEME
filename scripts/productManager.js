@@ -1,55 +1,69 @@
 //exportamos una clase productManager que se encargue de gestionar los productos
 //¿Paradigma secuencial que es? es un paradigma de programacion que se basa en la ejecucion de instrucciones de forma secuencial, es decir, una tras otra.
-import { LocalStorage } from "./localStorage.js";
+import { LocalStorage } from './localStorage.js'
+// Clase ProductManager que hereda de LocalStorage
 export class ProductManager extends LocalStorage {
+    #productsKey = 'products';
     #products;
-
+ 
     constructor() {
         super();
-        this.#products = []; //array de productos para almacenar productos.
+        // Obtener la lista de productos del localStorage al inicializar
+        this.#products = LocalStorage.getData(this.#productsKey);
     }
-
-    //Un metodo para listar todos los productos
+ 
+    // Método para obtener la lista de productos
     listProducts() {
-        return this.#products; //devuelve el array de productos
+        return this.#products;
     }
-
-    //metodo para agregar el producto.
+ 
+    // Método para agregar un producto
     addProduct(product) {
-        this.#products.push(product); //añade un producto al array de productos.
+        this.#products.push(product);
+        // Guardar la lista actualizada en el localStorage
+        this.saveProducts();
     }
-
-    //Metodo para actualizar un producto por su ID.
-    updateProductById(id, updatedProduct) { //recibe el id del producto a actualizar y el producto actualizado.
-        //buscamos el producto por su id
-        const index = this.#products.findIndex(product => product.id === id); //buscamos el indice del producto en el array de productos.
-        //si el producto existe, lo actualizamos
-        if (index !== -1) { //si el producto existe
-            this.#products[index] = updatedProduct; //actualizamos el producto en el array de productos.
+ 
+    // Método para actualizar un producto por su ID
+    updateProductById(id, updatedProduct) {
+        const index = this.#products.findIndex(product => product.id === id);
+ 
+        if (index !== -1) {
+            this.#products[index] = updatedProduct;
+            // Guardar la lista actualizada en el localStorage
+            this.saveProducts();
         }
     }
-    //Metodo para eliminar un producto por su ID.
+ 
+    // Método para eliminar un producto por su ID
     deleteProductById(id) {
-        //buscamos el producto por su id
-        const index = this.#products.findIndex(product => product.id === id); //buscamos el indice del producto en el array de productos.
-        //si el producto existe, lo eliminamos
-        if (index !== -1) { //si el producto existe
-            this.#products.splice(index, 1); //eliminamos el producto en el array de productos, si tiene el mismo indice.
+        const index = this.#products.findIndex(product => product.id === id);
+ 
+        if (index !== -1) {
+            this.#products.splice(index, 1);
+            // Guardar la lista actualizada en el localStorage
+            this.saveProducts();
         }
     }
-    //Metodo para mostrar todos los productos dentro del Array.
-    showProductBy() {
-        //buscamos el producto por su id
-        for (const product of this.#products) { //recorremos el array de productos uno por uno
-            console.log(`ID: ${product.id} Nombre: ${product.nombre} Cantidad: ${product.cantidad} Precio: ${product.precio}`); //mostramos el producto
-        }
+ 
+    // Método para guardar la lista de productos en el localStorage
+    saveProducts() {
+        LocalStorage.setData(this.#productsKey, this.#products);
     }
-    //ahora hacemos los getters y setters
-    get products() { //getter para obtener el array de productos
-        return this.#products; //devuelve el array de productos
-    }
-    set products(value) { //setter para establecer el array de productos
-        this.#products = value; //establece el array de productos
-    }
-
 }
+    //Metodo para mostrar todos los productos dentro del Array.
+//     showProductBy() {
+//         //buscamos el producto por su id
+//         for (const product of this.#products) { //recorremos el array de productos uno por uno
+//             console.log(`ID: ${product.id} Nombre: ${product.nombre} Cantidad: ${product.cantidad} Precio: ${product.precio}`); //mostramos el producto
+//         }
+//     }
+//     //ahora hacemos los getters y setters
+//     get products() { //getter para obtener el array de productos
+//         return this.#products; //devuelve el array de productos
+//     }
+//     set products(value) { //setter para establecer el array de productos
+//         this.#products = value; //establece el array de productos
+//     }
+
+// }
