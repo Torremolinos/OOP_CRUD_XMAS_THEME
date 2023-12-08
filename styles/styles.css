@@ -67,6 +67,7 @@ h1 {
   text-shadow: 2px 2px 4px rgb(13, 3, 3);
   background-color: rgb(246, 196, 104);
   box-shadow: 0 2px 4px gold;
+  font-size:30px
 }
 
 .inventory-table-styles th {
@@ -76,6 +77,7 @@ h1 {
   background-color: brown;
   opacity: 0.8;
   box-shadow: 0 2px 4px gold;
+  
 }
 
 .inventory-table-styles td:hover {
@@ -96,6 +98,7 @@ h1 {
   margin-bottom: 10px;
   box-shadow: 0 2px 4px gold;
   width: 49%;
+  
 }
 
 @media (max-width: 768px) {
@@ -115,6 +118,7 @@ label {
   background-color: wheat;
   color: brown;
   box-shadow: 0 2px 4px gold;
+  font-size:30px
 }
 ::placeholder {
   color: brown;
@@ -137,7 +141,7 @@ label {
 input {
   width: 100%;
   padding: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 20px !important;
   border: 1px solid brown;
   /* Borde con un tono más claro que el fondo */
   border-radius: 3px;
@@ -148,6 +152,7 @@ input {
   background-color: rgb(250, 205, 116);
   box-shadow: 0 2px 4px gold;
   text-align: center;
+  font-size:30px !important
 }
 th,
 td::first-letter {
@@ -172,6 +177,7 @@ button {
   text-shadow: 2px 2px 4px rgba(13, 3, 3, 0.5);
   background-color: rgb(245, 222, 179);
   box-shadow: 0 2px 4px gold;
+  font-size:30px!important;
 }
 input:focus {
   border: 2px solid #ffffff; /* Cambia el color del borde cuando está enfocado */
