@@ -67,10 +67,10 @@ h1 {
 
 .inventory-table-styles th,
 .inventory-table-styles td {
-  border: 1px solid rgba(252, 252, 252, 0.701);
+  border: 1px solid rgba(0, 0, 0, 0.701);
   padding: 8px;
   text-align: center;
-  text-shadow: 2px 2px 4px rgba(13, 3, 3, 0.5);
+  text-shadow: 2px 2px 4px rgb(13, 3, 3);
   background-color: rgb(246, 196, 104);
   box-shadow: 0 2px 4px gold;
 }
@@ -84,9 +84,9 @@ h1 {
   box-shadow: 0 2px 4px gold;
 }
 
-.inventory-table-styles tr:hover {
-  background-color: rgb(165, 120, 42);
-  color: brown;
+.inventory-table-styles td:hover {
+  background-color: brown;
+  color: rgb(0, 0, 0);
   text-shadow: 2px 2px 4px rgba(248, 96, 96, 0.5);
   box-shadow: 0 2px 4px gold;
 }
@@ -155,6 +155,11 @@ input {
   box-shadow: 0 2px 4px gold;
   text-align: center;
 }
+th,td::first-letter {
+  font-family: 'Christmas';
+  font-size: 2rem;
+  color: gold
+}
 .elevator{
   margin:  0;
 }
@@ -173,12 +178,17 @@ button {
   background-color: rgb(245, 222, 179);
   box-shadow: 0 2px 4px gold;
 }
-
+input:focus {
+  border: 2px solid #ffffff;  /* Cambia el color del borde cuando está enfocado */
+  outline:#eb5552;  /* Elimina el contorno predeterminado en algunos navegadores */
+}
 button:hover {
   background-color: #fbd308;
   /* Color de fondo azul más oscuro al pasar el cursor */
 }
-
+.escondido{
+  display: none;
+}
 i {
   position: absolute;
   background: #fff;

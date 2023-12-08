@@ -132,6 +132,43 @@ searchButton.addEventListener("click", function () {
     matchingRows.forEach(row => {
         row.style.display = "";
     });
+  });
+
+
+const searchInput = document.getElementById("search-product");
+searchInput.addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    // Obten el valor del campo de búsqueda
+    const searchTerm = searchInput.value.toLowerCase();
+
+    // Obtén todas las filas de la tabla
+    const tableRows = document.querySelectorAll("#inventory-table-events tbody tr");
+
+    // Filtra las filas para encontrar las que coinciden con el término de búsqueda
+    const matchingRows = Array.from(tableRows).filter(row => {
+      // Obtén el texto de la celda que contiene el nombre del producto (ajusta esto según la estructura real de tu tabla)
+      const productName = row.querySelector("td:nth-child(1)").textContent.toLowerCase();
+      // Verifica si el término de búsqueda está presente en el nombre del producto
+      return productName.includes(searchTerm);
+    });
+
+    // Si el campo de búsqueda está vacío, muestra todas las filas de la tabla
+    if (searchTerm === "") {
+      tableRows.forEach(row => {
+        row.style.display = "";
+      });
+    } else {
+      // Oculta todas las filas
+      tableRows.forEach(row => {
+        row.style.display = "none";
+      });
+
+      // Muestra solo las filas que coinciden con la búsqueda
+      matchingRows.forEach(row => {
+        row.style.display = "";
+      });
+    }
+  }
 });
 const subir = document.getElementById("elevator");
 subir.addEventListener("click", function () {
