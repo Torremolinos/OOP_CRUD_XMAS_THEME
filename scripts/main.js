@@ -29,7 +29,7 @@ if (!localStorage.getItem("productData")) {
   ];
   list.forEach((product) => productManager.addProduct(product)); // añadimos los productos al productManager
   updateInventoryTable(); // actualizamos la tabla de productos
-  updateFoot();
+  // updateFoot();
 } else {
   // Obtener los datos del localStorage y agregarlos al productManager
   const storedData = JSON.parse(localStorage.getItem("productData"));
@@ -43,7 +43,7 @@ if (!localStorage.getItem("productData")) {
     productManager.addProduct(product);
   });
   updateInventoryTable(); // actualizamos la tabla de productos
-  updateFoot();
+  // updateFoot();
 }
 
 // Agregar un evento de envío al formulario
@@ -75,7 +75,7 @@ document
     productManager.addProduct(newProduct);
     this.reset();
     updateInventoryTable();
-    updateFoot();
+    // updateFoot();
   });
 
 function updateInventoryTable() {
@@ -122,13 +122,13 @@ document
         );
         productManager.updateProductById(productId, updatedProduct);
         updateInventoryTable();
-        updateFoot();
+        // updateFoot();
       }
     } else if (target.classList.contains("delete-button")) {
       const productId = parseInt(target.dataset.id);
       productManager.deleteProductById(productId);
       updateInventoryTable();
-      updateFoot();
+      // updateFoot();
     }
   });
 
@@ -243,12 +243,12 @@ function updateFoot() {
     `;
   tableFoot.appendChild(row);
 }
-updateFoot();
-const preTotal = document.getElementById("total-precio");
-preTotal.innerHTML = precioTotal();
+// updateFoot();
+// const preTotal = document.getElementById("total-precio");
+// preTotal.innerHTML = precioTotal();
 
-const producto_total = document.getElementById("total-products");
-producto_total.innerHTML = cantidadTotal();
+// const producto_total = document.getElementById("total-products");
+// producto_total.innerHTML = cantidadTotal();
 
 // // Introduce valores vacíos en el localStorage
 // if (!localStorage.getItem("productData")) {
