@@ -18,8 +18,6 @@ body {
   font-family: "Christmas";
 }
 
-
-
 .enunciado {
   margin: 20px;
   display: flex;
@@ -151,13 +149,14 @@ input {
   box-shadow: 0 2px 4px gold;
   text-align: center;
 }
-th,td::first-letter {
-  font-family: 'Christmas';
+th,
+td::first-letter {
+  font-family: "Christmas";
   font-size: 2rem;
-  color: gold
+  color: gold;
 }
-.elevator{
-  margin:  0;
+.elevator {
+  margin: 0;
 }
 /* Estilos para el botón */
 button {
@@ -175,14 +174,14 @@ button {
   box-shadow: 0 2px 4px gold;
 }
 input:focus {
-  border: 2px solid #ffffff;  /* Cambia el color del borde cuando está enfocado */
-  outline:#eb5552;  /* Elimina el contorno predeterminado en algunos navegadores */
+  border: 2px solid #ffffff; /* Cambia el color del borde cuando está enfocado */
+  outline: #eb5552; /* Elimina el contorno predeterminado en algunos navegadores */
 }
 button:hover {
   background-color: #fbd308;
   /* Color de fondo azul más oscuro al pasar el cursor */
 }
-.escondido{
+.escondido {
   display: none;
 }
 i {

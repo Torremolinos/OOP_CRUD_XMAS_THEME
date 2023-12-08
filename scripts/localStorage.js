@@ -1,8 +1,6 @@
-// Creo una clase LocalStorage con todos sus atributos, constructor y métodos posibles
 /**
  * Representa una clase de utilidad para el almacenamiento local.
  */
-//Clase LocalStorage
 export class LocalStorage {
     // Método para obtener datos del localStorage
     static getData(key) {
@@ -18,3 +16,4 @@ export class LocalStorage {
     }
 
 }
+/*Esto me lo paso Laura porque se lo pasaste tu Diego y a ella no le servia lo aprobeche yo.*/

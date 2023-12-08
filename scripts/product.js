@@ -12,7 +12,7 @@ export class Product{
         this.#precio = precio;
     }
     
-    toJSON() {  //transformar los objetos a JsonObject
+    toJSON() {  //transformar los objetos a JsonObject me salvo la vida.
         return {
             id: this.#id,
             nombre: this.#nombre,

@@ -1,3 +1,8 @@
+/**
+ * @Author : Adrian Iglesias riño
+ * @github : https://github.com/Torremolinos/OOP_CRUD_XMAS_THEME
+ */
+
 import { nieve } from "./copos.js";
 nieve();
 import { Product } from "./product.js";
@@ -39,7 +44,7 @@ if (!localStorage.getItem("productData")) {
   updateInventoryTable(); // actualizamos la tabla de productos
 }
 
-
+// Agregar un evento de envío al formulario
 document.getElementById("product-form-events").addEventListener("submit", function (event) {
   event.preventDefault();
 
@@ -52,20 +57,20 @@ document.getElementById("product-form-events").addEventListener("submit", functi
     return;
   }
 
-  const newProduct = new Product(
-    Date.now(),
+  const newProduct = new Product( // creamos un nuevo producto
+    Date.now(), // usamos la fecha actual como ID
     productName,
     productQuantity,
     productPrice
   );
 
-  productManager.addProduct(newProduct);
+  productManager.addProduct(newProduct); 
   this.reset();
   updateInventoryTable();
 });
 
 
-function updateInventoryTable() {
+function updateInventoryTable() { // actualizamos la tabla de productos
   const tableBody = document.getElementById("body-table");
   tableBody.innerHTML = "";
 
@@ -170,12 +175,12 @@ searchInput.addEventListener("keydown", function (event) {
     }
   }
 });
-const subir = document.getElementById("elevator");
+//funcion subir al principio de la pagina
+const subir = document.getElementById("elevator"); 
 subir.addEventListener("click", function () {
   document.body.scrollTop = 0; // Para navegadores antiguos
   document.documentElement.scrollTop = 0; // Para navegadores modernos
 });
-
 const precioTotal = () => {
   let precioTotal = 0;
   let precioUnitario = 0;
